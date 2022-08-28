@@ -67,10 +67,10 @@ from cmath import pi
 pos = -1
 
 def search(list, n):
-    i = 0
-    while i < len(list):
-        if list[i] == n:            
-            globals()['pos'] = i
+
+    for id, i in enumerate(list):
+        if i == n:            
+            globals()['pos'] = id
             return True
         i = i + 1
 
@@ -78,8 +78,6 @@ def search(list, n):
 
 Arr = [2,4,6,8,10,12,14]
 n = 10
-
-print(Arr)
 
 if search(Arr, n):
     print("Found The Number at index ", pos)
